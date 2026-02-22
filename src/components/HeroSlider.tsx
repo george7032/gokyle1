@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { Link } from "react-router-dom";
 
 import hero1 from '@/assets/antelope.jpeg';
 import hero2 from '@/assets/elephant.jpeg';
@@ -116,12 +117,12 @@ const HeroSlider = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 1 }}
               >
-                <a href="/safaris" className="btn-safari">
-                  {t('hero.exploreSafaris')}
-                </a>
-                <a href="/contact" className="btn-outline-light">
-                  {t('hero.planTrip')}
-                </a>
+                <Link to="/safaris" className="btn-safari">
+                  {t("hero.exploreSafaris")}
+                </Link>
+                <Link to="/destinations" className="btn-outline-light">
+                  {t("View Destinations")}
+                </Link>
               </motion.div>
             </motion.div>
           </AnimatePresence>
